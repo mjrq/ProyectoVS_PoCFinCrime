@@ -44,12 +44,14 @@
     <Compile Include="ProyectoVS_PoCFinCrime\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppVS_PoCFinCrime\static\site.css" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\index.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppVS_PoCFinCrime\" />
     <Folder Include="AppVS_PoCFinCrime\migrations\" />
+    <Folder Include="AppVS_PoCFinCrime\static\" />
     <Folder Include="AppVS_PoCFinCrime\templates\" />
     <Folder Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\" />
     <Folder Include="ProyectoVS_PoCFinCrime\" />

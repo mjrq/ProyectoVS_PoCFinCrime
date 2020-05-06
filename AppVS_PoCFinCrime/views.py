@@ -1,8 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def index(request):
-    return HttpResponse("Hello, Django!")
+from datetime import datetime
 
-def home(request):
-    return HttpResponse("Hello, Django2!")
+def index(request):
+    now = datetime.now()
+
+    return render(
+        request,
+        "AppVS_PoCFinCrime/index.html",  # Relative path from the 'templates' folder to the template file
+        # "index.html", # Use this code for VS 2017 15.7 and earlier
+        {
+            'title' : "Hello Django",
+            'message' : "Hello Django!",
+            'content' : " on " + now.strftime("%A, %d %B, %Y at %X")
+        }
+    )

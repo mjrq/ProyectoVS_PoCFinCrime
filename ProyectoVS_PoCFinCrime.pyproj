@@ -53,6 +53,7 @@
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Layout.html" />
     <None Include="ProyectoVSPoCFinCrime20200507074121 - Web Deploy.pubxml" />
     <None Include="PruebaFinCrime - Web Deploy.pubxml" />
+    <Content Include="ProyectoVS_PoCFinCrime\static\site.css" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +63,7 @@
     <Folder Include="AppVS_PoCFinCrime\templates\" />
     <Folder Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\" />
     <Folder Include="ProyectoVS_PoCFinCrime\" />
+    <Folder Include="ProyectoVS_PoCFinCrime\static\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

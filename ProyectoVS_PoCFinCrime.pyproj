@@ -52,6 +52,7 @@
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\index.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Layout.html" />
     <None Include="ProyectoVSPoCFinCrime20200507074121 - Web Deploy.pubxml" />
+    <None Include="PruebaFinCrime - Web Deploy.pubxml" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>

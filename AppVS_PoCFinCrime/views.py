@@ -38,7 +38,7 @@ def Clientes(request):
         "AppVS_PoCFinCrime/Clientes.html",
         {
             'title' : "Clientes",
-            'content' : "Contenido de la tabla de Clientes."
+            'content' : "Contenido de la tabla de Clientes2."
         }
     )
 
@@ -48,7 +48,7 @@ def Transacciones(request):
         "AppVS_PoCFinCrime/Transacciones.html",
         {
             'title' : "Transacciones",
-            'content' : "Contenido de la tabla de Transacciones."
+            'content' : "Contenido de la tabla de Transacciones2."
         }
     )
 
@@ -59,6 +59,6 @@ def Cuentas(request):
         "AppVS_PoCFinCrime/Cuentas.html",
                 {
             'title' : "Cuentas",
-            'content' : "Contenido de la tabla de Cuentas."
+            'content' : "Contenido de la tabla de Cuentas2."
         }
     )

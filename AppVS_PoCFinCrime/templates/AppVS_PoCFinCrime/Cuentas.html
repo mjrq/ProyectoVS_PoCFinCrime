@@ -1,0 +1,15 @@
+﻿<html>
+{% extends "AppVS_PoCFinCrime/layout.html" %}
+<head>
+    <title>{{ title }}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
+</head>
+<body>
+    <b>Fichero de Cuentas</b>
+
+    {% block content %}
+    {{ content }}
+    {% endblock %}
+</body>
+</html>

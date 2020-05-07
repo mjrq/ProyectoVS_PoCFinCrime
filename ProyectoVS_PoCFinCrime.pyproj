@@ -4,6 +4,7 @@
     <Name>ProyectoVS_PoCFinCrime</Name>
     <RootNamespace>ProyectoVS_PoCFinCrime</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,7 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppVS_PoCFinCrime\static\site.css" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Transacciones.html" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Cuentas.html" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Clientes.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\index.html" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Layout.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>

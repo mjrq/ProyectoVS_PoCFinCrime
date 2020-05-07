@@ -4,9 +4,8 @@
     <meta charset="utf-8" />
     <title>{{ title }}</title>
     {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css'%}" />
 </head>
-
 <body>
     <div class="navbar">
        <a href="/" class="navbar-brand">PoC FinCrime</a>
@@ -14,7 +13,6 @@
        <a href="{% url 'Cuentas' %}" class="navbar-item">Cuentas</a>
        <a href="{% url 'Transacciones' %}" class="navbar-item">Transacciones</a>
     </div>
-
     <div class="body-content">
 {% block content %}{% endblock %}
         <hr/>

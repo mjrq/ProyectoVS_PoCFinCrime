@@ -1,11 +1,11 @@
 <html>
-<{% extends "AppVS_PoCFinCrime/layout.html" %}    
+<{% extends "AppVS_PoCFinCrime/Layout.html" %}    
 <head>
         <title>{{ title }}</title>
         {% load staticfiles %} <!-- Instruct Django to load static files -->
         <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
-    </head>
-    <body>
+</head>
+<body>
         
 {% block content %}
 <span class="message">{{ message }}</span>{{ content }}

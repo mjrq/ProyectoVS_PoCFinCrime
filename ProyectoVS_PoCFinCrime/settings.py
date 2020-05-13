@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppVS_PoCFinCrime',
-    'django_tables2'
+    'django_tables2',
 ]
 
 # Middleware framework

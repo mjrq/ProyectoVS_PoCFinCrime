@@ -1,0 +1,18 @@
+﻿<html>
+{% extends "AppVS_PoCFinCrime/Layout.html" %}
+<head>
+    <title>{{ title }}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
+</head>
+<body>
+    {% block content %}
+    <h1>Fichero Cargado</h1>
+    <form action="{% url 'ListaClientes' %}" method="GET" enctype="multipart/form-data">
+        {% csrf_token %}
+        <small>Pulsar el boton para ver todos los clientes</small>
+        <button type="submit">ListaClientes</button>
+    </form>
+    {% endblock %}
+</body>
+</html>

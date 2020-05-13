@@ -33,6 +33,9 @@
   <ItemGroup>
     <Compile Include="AppVS_PoCFinCrime\admin.py" />
     <Compile Include="AppVS_PoCFinCrime\apps.py" />
+    <Compile Include="AppVS_PoCFinCrime\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="AppVS_PoCFinCrime\migrations\__init__.py" />
     <Compile Include="AppVS_PoCFinCrime\models.py" />
     <Compile Include="AppVS_PoCFinCrime\tests.py" />
@@ -46,9 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppVS_PoCFinCrime\static\site.css" />
+    <Content Include="AppVS_PoCFinCrime\static\site2.css" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\BorrarClientes.html" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\FicheroCargado.html" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\customers_list.html" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\CargarClientes.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Transacciones.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Cuentas.html" />
-    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Clientes.html" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\CrearClientes.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\index.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Layout.html" />
     <None Include="ProyectoVSPoCFinCrime20200507074121 - Web Deploy.pubxml" />

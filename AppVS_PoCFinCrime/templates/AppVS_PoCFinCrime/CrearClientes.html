@@ -1,0 +1,22 @@
+﻿<html>
+{% extends "AppVS_PoCFinCrime/Layout.html" %}
+<head>
+    <title>{{ title }}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
+</head>
+<body>
+    
+    {% block content %}    
+
+    <h1>Creado un cliente con estos datos</h1>      
+    {{ Cliente.CUSTOMER_SOURCE_UNIQUE_ID }}<br/>
+    {{ Cliente.first_name }}<br/>
+    {{ Cliente.last_name }}<br/>
+     
+    <hr/> 
+  
+   
+    {% endblock %}
+</body>
+</html>

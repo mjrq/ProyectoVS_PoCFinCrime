@@ -8,10 +8,11 @@
 </head>
 <body>
     <div class="navbar">
-       <a href="/" class="navbar-brand">PoC FinCrime</a>
-       <a href="{% url 'Clientes' %}" class="navbar-item">Clientes</a>
-       <a href="{% url 'Cuentas' %}" class="navbar-item">Cuentas</a>
-       <a href="{% url 'Transacciones' %}" class="navbar-item">Transacciones</a>
+       <a href="/" class="navbar"><b>PoC FinCrime</b></a>
+       <a href="{% url 'CrearClientes' %}" class="navbar">CrearClientes</a>
+       <a href="{% url 'ListaClientes' %}" class="navbar">ListaClientes</a>
+       <a href="{% url 'CargarClientes' %}" class="navbar">CargarClientes</a>
+       <a href="{% url 'BorrarClientes' %}" class="navbar">BorrarClientes</a>
     </div>
     <div class="body-content">
 {% block content %}{% endblock %}

@@ -59,8 +59,7 @@
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\CrearClientes.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\index.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Layout.html" />
-    <None Include="ProyectoVSPoCFinCrime20200507074121 - Web Deploy.pubxml" />
-    <None Include="PruebaFinCrime - Web Deploy.pubxml" />
+    <None Include="ProyectoVSPoCFinCrime20200513165407 - Web Deploy.pubxml" />
     <Content Include="ProyectoVS_PoCFinCrime\static\site.css" />
     <Content Include="requirements.txt" />
   </ItemGroup>

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\xc681rh\Desktop\PoC FinCrime\ProyectoVisualStudio\ProyectoVS_PoCFinCrime\env"
+VIRTUAL_ENV="C:\Users\TS696VC\OneDrive - EY\Inmaculada Valero\POC-FinCrime\VisualStudio\ProyectoVS_PoCFinCrime\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -32,16 +32,25 @@ def CargarClientes(request):
     # let's check if it is a csv file
     if not csv_file.name.endswith('.csv'):
         messages.error(request, 'THIS IS NOT A CSV FILE')
-    data_set = csv_file.read().decode('UTF-8')
+   
+    data_set = csv_file.read().decode('latin-1')
+   
 
+    
     lines = data_set.split("\n")
+    #lines = lines.split(";")
 
+    print(lines)
+    
     for line in lines:
-        fields=line.split("|")
-
-        CUSTOMER = CUSTOMERS(CUSTOMER_SOURCE_UNIQUE_ID=fields[0],ACCOUNT_ON_HOLD_FLAG = fields[1],ACCOUNT_PURPOSE=fields[2])
+        fields=line.split(";")
+       #fields=line.replace("\r"," ")
+       #print(fields)
+        CUSTOMER = CUSTOMERS( CUSTOMER_SOURCE_UNIQUE_ID = fields[1] )
         CUSTOMER.save()
 
+
+    #ACCOUNT_BALANCE=fields[2],ACCOUNT_ON_HOLD_FLAG =fields[3],ACCOUNT_PURPOSE=fields[3], ACCOUNT_SEGMENT=fields[3] , ACCOUNT_SOURCE_UNIQUE_ID =fields[3]
     context = {}
     template2 = "AppVS_PoCFinCrime/FicheroCargado.html" 
     return render(request, template2, context)

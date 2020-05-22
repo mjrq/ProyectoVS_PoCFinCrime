@@ -11,7 +11,7 @@ class CUSTOMERS(models.Model):
     ACCOUNT_SEGMENT = models.IntegerField()
     ACCOUNT_SOURCE_UNIQUE_ID = models.TextField(unique = True)
     ACCOUNT_STATUS_CODE = models.CharField(max_length=100)
-    ACQUISITION_DATE = models.DateField(auto_now=True, auto_now_add =True)
+    ACQUISITION_DATE = models.DateField()
     #ANN_PREMIUM_AMT = models.CharField(max_length=100)
     BALANCE_DATE = models.DateField(auto_now=False, auto_now_add =False)
     BENEFICIARY_FLAG = models.CharField(max_length=100)

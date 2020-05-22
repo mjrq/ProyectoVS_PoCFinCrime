@@ -38,12 +38,8 @@ def CargarClientes(request):
 
     for line in lines:
         fields=line.split("|")
-        data_dict = {}
-        data_dict["CUSTOMER_SOURCE_UNIQUE_ID"] = fields[0]
-        data_dict["first_name"] = fields[1]
-        data_dict["last_name"] = fields[2]
 
-        CUSTOMER = CUSTOMERS(CUSTOMER_SOURCE_UNIQUE_ID=fields[0],first_name=fields[1],last_name=fields[2])
+        CUSTOMER = CUSTOMERS(CUSTOMER_SOURCE_UNIQUE_ID=fields[0],ACCOUNT_ON_HOLD_FLAG = fields[1],ACCOUNT_PURPOSE=fields[2])
         CUSTOMER.save()
 
     context = {}

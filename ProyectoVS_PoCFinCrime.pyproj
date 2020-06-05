@@ -48,7 +48,6 @@
     <Compile Include="ProyectoVS_PoCFinCrime\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppVS_PoCFinCrime\static\site3.css" />
     <Content Include="AppVS_PoCFinCrime\static\site.css" />
     <Content Include="AppVS_PoCFinCrime\static\site2.css" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\BorrarClientes.html" />

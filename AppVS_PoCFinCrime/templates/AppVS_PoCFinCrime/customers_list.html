@@ -4,48 +4,17 @@
     <title>{{ title }}</title>
     {% load staticfiles %}
     {% load render_table from django_tables2 %}
-    <link rel="stylesheet" type="text/css" href="{% static 'site3.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}" />
 </head>
-<body>   
+<body>
+
     {% block content %}
     <h1>Lista de Clientes</h1>
-    <table class="table table-bordered ">
-        <thead>
-            <tr>
-                <td>ACCOUNT_BALANCE</td>
-                <td>ACCOUNT_ON_HOLD_FLAG</td>
-                <td>ACCOUNT_PURPOSE</td>
-                <td>ACCOUNT_SEGMENT</td>
-                <td>ACCOUNT_SOURCE_UNIQUE_ID</td>
-                <td>ACCOUNT_STATUS_CODE</td>
-                <td>ACQUISITION_DATE</td>
-                <td>ANN_PREMIUM_AMT</td>
-                <td>BALANCE_DATE</td>
-                <td>BENEFICIARY_FLAG</td>
-            </tr>
-        </thead>
-        <tbody>
-            {% if customers_list %}
-            {% for custumer in custumer_list %}
-            <tr>
-                <td>{{ custumer.ACCOUNT_BALANCE}}</td>
-                <td>{{ custumer.ACCOUNT_ON_HOLD_FLAG}}</td>
-                <td>{{ custumer.ACCOUNT_PURPOSE}}</td>
-                <td>{{ custumer.ACCOUNT_SEGMENT}}</td>
-                <td>{{ custumer.ACCOUNT_SOURCE_UNIQUE_ID}}</td>
-                <td>{{ custumer.ACCOUNT_STATUS_CODE}}</td>
-                <td>{{ custumer.ACQUISITION_DATE}}</td>
-                <td>{{ custumer.ANN_PREMIUM_AMT}}</td>
-                <td>{{ custumer.BALANCE_DATE}}</td>
-                <td>{{ custumer.BENEFICIARY_FLAG}}</td>
-            </tr>
-        <!-- render_table table  -->
-            {% endfor %}
-            {% else %}
-            <h1> No hay clientes</h1>
-            {% endif %}
-        </tbody>
-    </table>
-    {% endblock %} 
+    {% if customers_list %}
+    {% render_table customers_list %} 
+    {% else %}
+    <p>No hay clientes.</p>
+    {% endif %}
+    {% endblock %}
 </body>
 </html>

@@ -1,14 +1,16 @@
-from django import forms 
-from AppVS_PoCFinCrime.models import CUSTOMER 
+import django_tables2 as tables 
+from AppVS_PoCFinCrime.models import CUSTOMERS 
   
   
 # creating a form 
-class ClientesForm(forms.ModelForm): 
+class ClientesForm(tables.Table): 
     # create meta class 
-    class Meta: 
+    class Meta:
+        #Arbitrary attributes to be added to the <table> tag
+        attrs = {"class": "mytable"}
         # specify model to be used 
         model = CUSTOMERS 
-  
+        #template_name = "django_tables2/bootstrap.html"
         # specify fields to be used 
         fields = [
             "ACCOUNT_BALANCE",
@@ -115,3 +117,5 @@ class ClientesForm(forms.ModelForm):
             "TXN_STATUS_CODE "
             "ZONE "    
       ] 
+
+#table =ClientesForm()

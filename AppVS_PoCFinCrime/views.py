@@ -6,6 +6,9 @@ from datetime import datetime
 
 from AppVS_PoCFinCrime.models import CUSTOMERS
 from django.views import generic
+from django_tables2 import SingleTableView
+
+from .forms import ClientesForm
 
 
 import csv, io
@@ -22,7 +25,7 @@ def CargarClientes(request):
     data = CUSTOMERS.objects.all()
     #prompt is a context variable that can have different values depending on their context
     prompt = {
-        'order': 'Order of the CSV should be name, email, address,    phone, profile',
+        'order': 'Order of the CSV must be according to the model',
         'profiles': data,
         'title' : 'Load CSV file'
               }
@@ -165,10 +168,10 @@ def CargarClientes(request):
     template2 = "AppVS_PoCFinCrime/FicheroCargado.html" 
     return render(request, template2, context)
 
-class ListaClientes(generic.ListView):
+class ListaClientes(SingleTableView):
     model = CUSTOMERS
     context_object_name = 'customers_list'   # your own name for the list as a template variable
-    template_name = 'ClientesView.html' # Specify your own template name/location
+    template_name = 'customers_list.html' # Specify your own template name/location
 
 def index(request):
     now = datetime.now()

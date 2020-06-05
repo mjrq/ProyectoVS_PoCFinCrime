@@ -57,6 +57,9 @@ ROOT_URLCONF = 'ProyectoVS_PoCFinCrime.urls'
 
 # Template configuration
 # https://docs.djangoproject.com/en/2.1/topics/templates/
+
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap.html"
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

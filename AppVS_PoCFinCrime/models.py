@@ -8,7 +8,7 @@ class CUSTOMERS(models.Model):
     ACCOUNT_ON_HOLD_FLAG = models.CharField(max_length=100,blank=True, null=True)#
     ACCOUNT_PURPOSE = models.TextField(blank=True, null=True)
     ACCOUNT_SEGMENT = models.IntegerField(blank=True, null=True)
-    ACCOUNT_SOURCE_UNIQUE_ID = models.TextField(unique = True)
+    ACCOUNT_SOURCE_UNIQUE_ID = models.CharField(max_length = 128, blank=True, null=True)
     ACCOUNT_STATUS_CODE = models.CharField(max_length=100, blank=True, null=True)
     ACQUISITION_DATE = models.DateField(blank=True, null=True)
     ANN_PREMIUM_AMT = models.CharField(max_length=100, blank=True, null=True)#
@@ -75,7 +75,7 @@ class CUSTOMERS(models.Model):
     PAYMENT_METHOD = models.TextField( blank=True, null=True)
     PERIODIC_LOAN_AMOUNT = models.FloatField( blank=True, null=True)
     PERSON_TITLE = models.TextField( blank=True, null=True)
-    POSTAL_CODE = models.IntegerField( blank=True, null=True)
+    POSTAL_CODE = models.IntegerField(blank=True, null=True)
     PRIMARY_CARD_ID = models.IntegerField( blank=True, null=True)
     PRIMARY_CUSTOMER_CATEGORY_CODE = models.TextField( blank=True, null=True)
     PRIME_BRANCH_ID = models.IntegerField( blank=True, null=True)
@@ -93,7 +93,7 @@ class CUSTOMERS(models.Model):
     SINGLE_PREMIUM_TOTAL = models.CharField(max_length=100,  blank=True, null=True)#
     SOURCE_SYSTEM_CODE = models.CharField(max_length=100,  blank=True, null=True)#
     SOURCE_TXN_NUM = models.TextField( blank=True, null=True)
-    SOURCE_TXN_UNIQUE_ID = models.TextField(unique = True, primary_key=True)
+    SOURCE_TXN_UNIQUE_ID = models.CharField(max_length=128, blank=True, null=True)
     SUB_DIVISION = models.IntegerField( blank=True, null=True)
     SUM_INSURED = models.CharField(max_length=100,  blank=True, null=True)#
     TO_DATE = models.DateField(blank=True, null=True)

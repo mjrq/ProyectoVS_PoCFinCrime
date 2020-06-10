@@ -36,7 +36,6 @@
     <Compile Include="AppVS_PoCFinCrime\forms.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppVS_PoCFinCrime\migrations\__init__.py" />
     <Compile Include="AppVS_PoCFinCrime\models.py" />
     <Compile Include="AppVS_PoCFinCrime\tests.py" />
     <Compile Include="AppVS_PoCFinCrime\views.py" />

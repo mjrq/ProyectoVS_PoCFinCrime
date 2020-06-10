@@ -28,7 +28,7 @@ import AppVS_PoCFinCrime.views
 urlpatterns = [
     url(r'^$', AppVS_PoCFinCrime.views.index, name='index'),
     url(r'^CrearClientes$', AppVS_PoCFinCrime.views.CrearClientes, name='CrearClientes'),
-    url(r'^ListaClientes$', AppVS_PoCFinCrime.views.ListaClientes.as_view(), name='ListaClientes'),
+    url(r'^ListaClientes', AppVS_PoCFinCrime.views.ListaClientes.as_view(), name='ListaClientes'),
     url(r'^CargarClientes$',AppVS_PoCFinCrime.views.CargarClientes, name='CargarClientes'),
     url(r'^BorrarClientes$',AppVS_PoCFinCrime.views.BorrarClientes, name='BorrarClientes')
     

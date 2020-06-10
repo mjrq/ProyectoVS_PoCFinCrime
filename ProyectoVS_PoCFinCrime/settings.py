@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppVS_PoCFinCrime',
+    'bootstrap4',
     'django_tables2',
+
 ]
 
 # Middleware framework
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'ProyectoVS_PoCFinCrime.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,9 +81,11 @@ WSGI_APPLICATION = 'ProyectoVS_PoCFinCrime.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'OPTIONS': {'timeout': 200000,}
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'poc_fincrimedb',
+        'USER': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

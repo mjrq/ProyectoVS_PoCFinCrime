@@ -22,7 +22,7 @@ def CargarClientes(request):
     data = CUSTOMERS.objects.all()
     #prompt is a context variable that can have different values depending on their context
     prompt = {
-        'order': 'Order of the CSV should be name, email, address,    phone, profile',
+        'order': 'Order of the CSV must be according to the model',
         'profiles': data,
         'title' : 'Load CSV file'
               }
@@ -37,7 +37,7 @@ def CargarClientes(request):
 
     
     # Read complete CSV
-    data_set = csv_file.read().decode('latin-1')
+    data_set = csv_file.read().decode('latin')
 
     # Read CSV lines 
     lines = data_set.split("\n")
@@ -54,6 +54,23 @@ def CargarClientes(request):
                 fields.append(None)
             else:
                 fields.append(i)
+
+        #Data fixes 
+        if ',' in fields[71]:
+            fields[71]= int(float(fields[71].replace(',','.')))
+        elif '.' in fields[71]:
+            fields[71]=int(float(fields[71]))
+
+        if int(fields[6]) >9999:
+            fields[6]='9999'
+        
+        #if fields[56].format('%H:%M:%S'):
+        #    fields[56] = datetime.strptime(fields[56],'%H:%M:%S')
+        #else:
+        #    fields[56] = datetime.strptime(fields[56],'%d/%m/%Y')
+            
+
+        print= fields
         #Create table
         CUSTOMER = CUSTOMERS(ACCOUNT_BALANCE =float(fields[0]) if (fields[0] is not None) else fields[0],
                              ACCOUNT_ON_HOLD_FLAG = fields[1],
@@ -67,7 +84,7 @@ def CargarClientes(request):
                              BENEFICIARY_FLAG =fields[9],
                              BLOCKED_REASON =  fields[10],                                 
                              BLOCKED_TYPE = fields[11],                                  
-                             BRANCH_ID =int(fields[12]),
+                             BRANCH_ID =int(fields[12]) if (fields[12] is not None) else fields[12],
                              BUSINESS_SEGMENT_1 = fields[13],
                              BUSINESS_TYPE =fields[14],
                              CANCELLED_DATE = fields[15],
@@ -94,8 +111,8 @@ def CargarClientes(request):
                              CUSTOMER_STATUS_CODE = int(fields[36]),
                              CUSTOMER_TYPE = fields[37],
                              CUSTOMER_TYPE_CODE = fields[38],
-                             DATE_CLOSED = datetime.strptime(fields[39],'%d/%m/%Y'),
-                             DATE_OPENED = datetime.strptime(fields[40],'%d/%m/%Y'),
+                             DATE_CLOSED = datetime.strptime(fields[39],'%d/%m/%Y') if (fields[39] is not None) else fields[39],
+                             DATE_OPENED = datetime.strptime(fields[40],'%d/%m/%Y') if (fields[40] is not None) else fields[40],
                              DEATH_BENEFIT_AMT =fields[41],
                              DEBIT_TRUNOVER =fields[42],
                              DELAYED_ACCOUNT_FLAG = fields[43],
@@ -106,20 +123,20 @@ def CargarClientes(request):
                              EMPLOYMENT_STATUS = fields[48],
                              ERROR_CORRECT_FLAG =fields[49],
                              FILTER = fields[50],
-                             FROM_DATE =datetime.strptime(fields[51],'%d/%m/%Y'),
+                             FROM_DATE =datetime.strptime(fields[51],'%d/%m/%Y')if (fields[51] is not None) else fields[51],
                              GENDER_CODE = fields[52],
                              GROSS_PREM_TTD =fields[53],
                              HOLDING_BANK_NAME = fields[54],
                              INCORPORATION_COUNTRY_CODE = fields[55],
                              INCORPORATION_DATE = datetime.strptime(fields[56],'%d/%m/%Y'),
                              INST_PREMIUM_AMT = fields[57],
-                             ISSUE_DATE = datetime.strptime(fields[58],'%d/%m/%Y'),
+                             ISSUE_DATE = datetime.strptime(fields[58],'%d/%m/%Y') if (fields[58] is not None) else fields[58],
                              LANGUAGE_PREF_CODE = fields[59],
                              LIFE_INS_CONTRACT_DURATION = int(fields[60]),
                              MATURITY_DATE =fields[61],
                              OCCUPATION =fields[62],
                              ORG_UNIT_CODE = fields[63],
-                             ORIGINATION_DATE =datetime.strptime(fields[64],'%d/%m/%Y'),
+                             ORIGINATION_DATE =datetime.strptime(fields[64],'%d/%m/%Y') if (fields[64] is not None) else fields[64],
                              OTHER_HOLD_AMOUNT = float(fields[65])  if (fields[65] is not None) else fields[65],
                              OVERDRAFT_LIMIT =float(fields[66])  if (fields[66] is not None) else fields[66],
                              PAYMENT_FREQ = fields[67],
@@ -160,7 +177,7 @@ def CargarClientes(request):
                              ZONE = fields[102]                                
                              )
         CUSTOMER.save()
-
+    
     context = {}
     template2 = "AppVS_PoCFinCrime/FicheroCargado.html" 
     return render(request, template2, context)
@@ -168,7 +185,8 @@ def CargarClientes(request):
 class ListaClientes(generic.ListView):
     model = CUSTOMERS
     context_object_name = 'customers_list'   # your own name for the list as a template variable
-    template_name = 'ClientesView.html' # Specify your own template name/location
+    template_name = 'custumer_list.html' # Specify your own template name/location
+    paginate_by = 25
 
 def index(request):
     now = datetime.now()

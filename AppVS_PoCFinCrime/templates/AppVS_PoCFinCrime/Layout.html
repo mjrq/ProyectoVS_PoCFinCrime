@@ -7,15 +7,24 @@
     <link rel="stylesheet" type="text/css" href="{% static 'site.css'%}" />
 </head>
 <body>
-    <div class="navbar">
+    <div class="navbar" style="font-family: Arial; background-color: #2e2e38;" >
+        <a class="navbar-brand" href="#">
+        <img
+          src="..\static\EY_Logo_Beam_RGB_White_Yellow.png"
+          width="50"
+          height="50"
+          class="d-inline-block align-top"
+          loading="lazy"
+          alt="logo"
+         /></a>
        <a href="/" class="navbar"><b>PoC FinCrime</b></a>
        <a href="{% url 'CrearClientes' %}" class="navbar">CrearClientes</a>
        <a href="{% url 'ListaClientes' %}" class="navbar">ListaClientes</a>
        <a href="{% url 'CargarClientes' %}" class="navbar">CargarClientes</a>
        <a href="{% url 'BorrarClientes' %}" class="navbar">BorrarClientes</a>
     </div>
-    <div class="body-content">
-{% block content %}{% endblock %}
+    <div class="body-content" style="font-family: Arial;">
+       {% block content %}{% endblock %}
         <hr/>
         <footer>
             <p>&copy; 2018</p>

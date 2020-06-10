@@ -1,5 +1,5 @@
 from django import forms 
-from AppVS_PoCFinCrime.models import CUSTOMER 
+from AppVS_PoCFinCrime.models import CUSTOMERS 
   
   
 # creating a form 
@@ -8,7 +8,6 @@ class ClientesForm(forms.ModelForm):
     class Meta: 
         # specify model to be used 
         model = CUSTOMERS 
-  
         # specify fields to be used 
         fields = [
             "ACCOUNT_BALANCE",

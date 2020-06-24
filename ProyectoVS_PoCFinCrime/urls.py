@@ -21,6 +21,7 @@ Including another URLconf
 from django.urls import path
 from django.conf.urls import include, url
 import AppVS_PoCFinCrime.views
+import AppVS_PoCFinCrime.views2
 
 
 
@@ -30,6 +31,7 @@ urlpatterns = [
     url(r'^CrearClientes$', AppVS_PoCFinCrime.views.CrearClientes, name='CrearClientes'),
     url(r'^ListaClientes', AppVS_PoCFinCrime.views.ListaClientes.as_view(), name='ListaClientes'),
     url(r'^CargarClientes$',AppVS_PoCFinCrime.views.CargarClientes, name='CargarClientes'),
-    url(r'^BorrarClientes$',AppVS_PoCFinCrime.views.BorrarClientes, name='BorrarClientes')
+    url(r'^BorrarClientes$',AppVS_PoCFinCrime.views.BorrarClientes, name='BorrarClientes'),
+    url(r'^AnalisisInicial$',AppVS_PoCFinCrime.views2.AnalisisInicial, name='AnalisisInicial'),
     
 ]

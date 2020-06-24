@@ -8,6 +8,8 @@ from AppVS_PoCFinCrime.models import CUSTOMERS
 from django.views import generic
 
 
+
+
 import csv, io
 import codecs
 from datetime import datetime
@@ -35,7 +37,6 @@ def CargarClientes(request):
     if not csv_file.name.endswith('.csv'):
         messages.error(request, 'THIS IS NOT A CSV FILE')
 
-    
     # Read complete CSV
     data_set = csv_file.read().decode('latin')
 
@@ -181,6 +182,7 @@ def CargarClientes(request):
     context = {}
     template2 = "AppVS_PoCFinCrime/FicheroCargado.html" 
     return render(request, template2, context)
+
 
 class ListaClientes(generic.ListView):
     model = CUSTOMERS

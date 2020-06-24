@@ -37,9 +37,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AppVS_PoCFinCrime\models.py" />
+    <Compile Include="AppVS_PoCFinCrime\views2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppVS_PoCFinCrime\package1\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="AppVS_PoCFinCrime\tests.py" />
     <Compile Include="AppVS_PoCFinCrime\views.py" />
-    <Compile Include="AppVS_PoCFinCrime\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="ProyectoVS_PoCFinCrime\__init__.py" />
     <Compile Include="ProyectoVS_PoCFinCrime\settings.py" />
@@ -59,12 +64,14 @@
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\index.html" />
     <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\Layout.html" />
     <None Include="ProyectoVSPoCFinCrime20200513165407 - Web Deploy.pubxml" />
+    <Content Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\AnalisisInicial.html" />
     <Content Include="ProyectoVS_PoCFinCrime\static\site.css" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppVS_PoCFinCrime\" />
     <Folder Include="AppVS_PoCFinCrime\migrations\" />
+    <Folder Include="AppVS_PoCFinCrime\package1\" />
     <Folder Include="AppVS_PoCFinCrime\static\" />
     <Folder Include="AppVS_PoCFinCrime\templates\" />
     <Folder Include="AppVS_PoCFinCrime\templates\AppVS_PoCFinCrime\" />
